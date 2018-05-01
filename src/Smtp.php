@@ -7,7 +7,8 @@ use function \array_key_exists;
 /**
  *
  */
-class Smtp {
+class Smtp
+{
 
     // <editor-fold defaultstate="collapsed" desc="Class constants">
 
@@ -244,7 +245,8 @@ class Smtp {
      * @param int $code
      * @return bool
      */
-    public static function isValid(int $code): bool {
+    public static function isValid(int $code): bool
+    {
         return array_key_exists($code, self::CODE_DESCRIPTION);
     }
 }

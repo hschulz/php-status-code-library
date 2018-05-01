@@ -8,7 +8,8 @@ use function \array_search;
 /**
  * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
  */
-class Http {
+class Http
+{
 
     // <editor-fold defaultstate="collapsed" desc="Class constants">
 
@@ -469,7 +470,8 @@ class Http {
      * @param int $code
      * @return bool
      */
-    public static function isInformational(int $code): bool {
+    public static function isInformational(int $code): bool
+    {
         return array_search($code, self::INFORMATIONAL, true) !== false;
     }
 
@@ -479,7 +481,8 @@ class Http {
      * @param int $code
      * @return bool
      */
-    public static function isSuccessful(int $code): bool {
+    public static function isSuccessful(int $code): bool
+    {
         return array_search($code, self::SUCCESSFUL, true) !== false;
     }
 
@@ -489,7 +492,8 @@ class Http {
      * @param int $code
      * @return bool
      */
-    public static function isRedirection(int $code): bool {
+    public static function isRedirection(int $code): bool
+    {
         return array_search($code, self::REDIRECTION, true) !== false;
     }
 
@@ -499,7 +503,8 @@ class Http {
      * @param int $code
      * @return bool
      */
-    public static function isClientError(int $code) {
+    public static function isClientError(int $code)
+    {
         return array_search($code, self::CLIENT_ERROR, true) !== false;
     }
 
@@ -509,7 +514,8 @@ class Http {
      * @param int $code
      * @return bool
      */
-    public static function isServerError(int $code): bool {
+    public static function isServerError(int $code): bool
+    {
         return array_search($code, self::SERVER_ERROR, true) !== false;
     }
 
@@ -518,7 +524,8 @@ class Http {
      * @param int $code
      * @return bool
      */
-    public static function isValid(int $code): bool {
+    public static function isValid(int $code): bool
+    {
         return array_key_exists($code, self::CODE_DESCRIPTION);
     }
 }

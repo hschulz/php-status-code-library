@@ -2,18 +2,18 @@
 
 namespace hschulz\StatusCodes\Tests\Unit;
 
-use \PHPUnit\Framework\TestCase;
 use \hschulz\StatusCodes\Ftp;
-use \TypeError;
+use \PHPUnit\Framework\TestCase;
 use \stdClass;
-use function \chr;
-use const \PHP_INT_MIN;
+use \TypeError;
 use const \PHP_INT_MAX;
+use const \PHP_INT_MIN;
+use function \chr;
 
-final class FtpTest extends TestCase {
-
-    public function testCanDetermineValid() {
-
+final class FtpTest extends TestCase
+{
+    public function testCanDetermineValid()
+    {
         $this->assertFalse(Ftp::isValid(PHP_INT_MIN));
         $this->assertFalse(Ftp::isValid(0));
         $this->assertTrue(Ftp::isValid(Ftp::BAD_SEQUENCE_OF_COMMANDS));
@@ -23,8 +23,8 @@ final class FtpTest extends TestCase {
         $this->assertFalse(Ftp::isValid(PHP_INT_MAX));
     }
 
-    public function testValidOnlyAcceptsInteger() {
-
+    public function testValidOnlyAcceptsInteger()
+    {
         $this->expectException(TypeError::class);
 
         $this->assertFalse(Ftp::isValid(true));

@@ -7,7 +7,8 @@ use function \array_key_exists;
 /**
  *
  */
-class Ftp {
+class Ftp
+{
 
     // <editor-fold defaultstate="collapsed" desc="Class constants">
 
@@ -304,6 +305,7 @@ class Ftp {
      * @var int
      */
     const CONFIDENTIALITY_PROTECTED_REPLY = 633;
+
     /**
      *
      * @var array
@@ -367,7 +369,8 @@ class Ftp {
      * @param int $code
      * @return bool
      */
-    public static function isValid(int $code): bool {
+    public static function isValid(int $code): bool
+    {
         return array_key_exists($code, self::CODE_DESCRIPTION);
     }
 }

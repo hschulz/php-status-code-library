@@ -2,18 +2,18 @@
 
 namespace hschulz\StatusCodes\Tests\Unit;
 
-use \PHPUnit\Framework\TestCase;
 use \hschulz\StatusCodes\Smtp;
-use \TypeError;
+use \PHPUnit\Framework\TestCase;
 use \stdClass;
-use function \chr;
-use const \PHP_INT_MIN;
+use \TypeError;
 use const \PHP_INT_MAX;
+use const \PHP_INT_MIN;
+use function \chr;
 
-final class SmtpTest extends TestCase {
-
-    public function testCanDetermineValid() {
-
+final class SmtpTest extends TestCase
+{
+    public function testCanDetermineValid()
+    {
         $this->assertFalse(Smtp::isValid(PHP_INT_MIN));
         $this->assertFalse(Smtp::isValid(0));
         $this->assertTrue(Smtp::isValid(Smtp::MACHINE_DOES_NOT_ACCEPT_MAIL));
@@ -23,8 +23,8 @@ final class SmtpTest extends TestCase {
         $this->assertFalse(Smtp::isValid(PHP_INT_MAX));
     }
 
-    public function testValidOnlyAcceptsInteger() {
-
+    public function testValidOnlyAcceptsInteger()
+    {
         $this->expectException(TypeError::class);
 
         $this->assertFalse(Smtp::isValid(true));
