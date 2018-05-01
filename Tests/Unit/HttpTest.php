@@ -2,18 +2,18 @@
 
 namespace hschulz\StatusCodes\Tests\Unit;
 
-use \PHPUnit\Framework\TestCase;
 use \hschulz\StatusCodes\Http;
-use \TypeError;
+use \PHPUnit\Framework\TestCase;
 use \stdClass;
-use function \chr;
-use const \PHP_INT_MIN;
+use \TypeError;
 use const \PHP_INT_MAX;
+use const \PHP_INT_MIN;
+use function \chr;
 
-final class HttpTest extends TestCase {
-
-    public function testCanDetermineValid() {
-
+final class HttpTest extends TestCase
+{
+    public function testCanDetermineValid()
+    {
         $this->assertFalse(Http::isValid(PHP_INT_MIN));
         $this->assertFalse(Http::isValid(0));
         $this->assertTrue(Http::isValid(Http::OK));
@@ -23,8 +23,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isValid(PHP_INT_MAX));
     }
 
-    public function testValidOnlyAcceptsInteger() {
-
+    public function testValidOnlyAcceptsInteger()
+    {
         $this->expectException(TypeError::class);
 
         $this->assertFalse(Http::isValid(true));
@@ -35,8 +35,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isValid(new stdClass()));
     }
 
-    public function testCanDetermineInformational() {
-
+    public function testCanDetermineInformational()
+    {
         $this->assertFalse(Http::isInformational(PHP_INT_MIN));
         $this->assertFalse(Http::isInformational(-1));
         $this->assertFalse(Http::isInformational(0));
@@ -48,8 +48,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isInformational(PHP_INT_MAX));
     }
 
-    public function testInformationalOnlyAcceptsInteger() {
-
+    public function testInformationalOnlyAcceptsInteger()
+    {
         $this->expectException(TypeError::class);
 
         $this->assertFalse(Http::isInformational(true));
@@ -60,8 +60,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isInformational(new stdClass()));
     }
 
-    public function testCanDetermineSuccessful() {
-
+    public function testCanDetermineSuccessful()
+    {
         $this->assertFalse(Http::isSuccessful(PHP_INT_MIN));
         $this->assertFalse(Http::isSuccessful(-1));
         $this->assertFalse(Http::isSuccessful(0));
@@ -73,8 +73,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isSuccessful(PHP_INT_MAX));
     }
 
-    public function testSuccessfulOnlyAcceptsInteger() {
-
+    public function testSuccessfulOnlyAcceptsInteger()
+    {
         $this->expectException(TypeError::class);
 
         $this->assertFalse(Http::isSuccessful(true));
@@ -85,8 +85,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isSuccessful(new stdClass()));
     }
 
-    public function testCanDetermineRedirection() {
-
+    public function testCanDetermineRedirection()
+    {
         $this->assertFalse(Http::isRedirection(PHP_INT_MIN));
         $this->assertFalse(Http::isRedirection(-1));
         $this->assertFalse(Http::isRedirection(0));
@@ -98,8 +98,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isRedirection(PHP_INT_MAX));
     }
 
-    public function testRedirectionOnlyAcceptsInteger() {
-
+    public function testRedirectionOnlyAcceptsInteger()
+    {
         $this->expectException(TypeError::class);
 
         $this->assertFalse(Http::isRedirection(true));
@@ -110,8 +110,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isRedirection(new stdClass()));
     }
 
-    public function testCanDetermineClientError() {
-
+    public function testCanDetermineClientError()
+    {
         $this->assertFalse(Http::isClientError(PHP_INT_MIN));
         $this->assertFalse(Http::isClientError(-1));
         $this->assertFalse(Http::isClientError(0));
@@ -123,8 +123,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isClientError(PHP_INT_MAX));
     }
 
-    public function testClientErrorOnlyAcceptsInteger() {
-
+    public function testClientErrorOnlyAcceptsInteger()
+    {
         $this->expectException(TypeError::class);
 
         $this->assertFalse(Http::isClientError(true));
@@ -135,8 +135,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isClientError(new stdClass()));
     }
 
-    public function testCanDetermineServerError() {
-
+    public function testCanDetermineServerError()
+    {
         $this->assertFalse(Http::isServerError(PHP_INT_MIN));
         $this->assertFalse(Http::isServerError(-1));
         $this->assertFalse(Http::isServerError(0));
@@ -148,8 +148,8 @@ final class HttpTest extends TestCase {
         $this->assertFalse(Http::isServerError(PHP_INT_MAX));
     }
 
-    public function testServerErrorOnlyAcceptsInteger() {
-
+    public function testServerErrorOnlyAcceptsInteger()
+    {
         $this->expectException(TypeError::class);
 
         $this->assertFalse(Http::isServerError(true));
