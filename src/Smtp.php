@@ -2,207 +2,206 @@
 
 namespace hschulz\StatusCodes;
 
-use function \array_key_exists;
+use function array_key_exists;
 
 /**
  *
  */
 class Smtp
 {
-
     // <editor-fold defaultstate="collapsed" desc="Class constants">
 
     /**
      * 211
      * @var int
      */
-    const SYSTEM_STATUS_OR_HELP_REPLY = 211;
+    public const SYSTEM_STATUS_OR_HELP_REPLY = 211;
 
     /**
      * 214
      * @var int
      */
-    const HELP_MESSAGE = 214;
+    public const HELP_MESSAGE = 214;
 
     /**
      * 220
      * @var int
      */
-    const DOMAIN_SERVICE_READY = 220;
+    public const DOMAIN_SERVICE_READY = 220;
 
     /**
      * 221
      * @var int
      */
-    const DOMAIN_SERVICE_CLOSING = 221;
+    public const DOMAIN_SERVICE_CLOSING = 221;
 
     /**
      * 250
      * @var int
      */
-    const OK_QUEUING_FOR_NODE = 250;
+    public const OK_QUEUING_FOR_NODE = 250;
 
     /**
      * 251
      * @var int
      */
-    const OK_NO_MESSAGES_WAITING = 251;
+    public const OK_NO_MESSAGES_WAITING = 251;
 
     /**
      * 252
      * @var int
      */
-    const OK_PENDING_MESSAGES_FOR_NODE = 252;
+    public const OK_PENDING_MESSAGES_FOR_NODE = 252;
 
     /**
      * 253
      * @var int
      */
-    const OK_MESSAGES_PENDING = 253;
+    public const OK_MESSAGES_PENDING = 253;
 
     /**
      * 354
      * @var int
      */
-    const START_MAIL_INPUT = 354;
+    public const START_MAIL_INPUT = 354;
 
     /**
      * 355
      * @var int
      */
-    const OCTET_OFFSET_IS_TRANSACTION_OFFSET = 355;
+    public const OCTET_OFFSET_IS_TRANSACTION_OFFSET = 355;
 
     /**
      * 421
      * @var int
      */
-    const DOMAIN_SERVICE_NOT_AVAILABLE = 421;
+    public const DOMAIN_SERVICE_NOT_AVAILABLE = 421;
 
     /**
      * 432
      * @var int
      */
-    const PASSWORD_TRANSITION_NEEDED = 432;
+    public const PASSWORD_TRANSITION_NEEDED = 432;
 
     /**
      * 452
      * @var int
      */
-    const REQUESTED_MAIL_ACTION_NOT_TAKEN = 452;
+    public const REQUESTED_MAIL_ACTION_NOT_TAKEN = 452;
 
     /**
      * 453
      * @var int
      */
-    const YOU_HAVE_NO_MAIL = 453;
+    public const YOU_HAVE_NO_MAIL = 453;
 
     /**
      * 454
      * @var int
      */
-    const TLS_NOT_AVAILABLE = 454;
+    public const TLS_NOT_AVAILABLE = 454;
 
     /**
      * 458
      * @var int
      */
-    const UNABLE_TO_QUEUE_MESSAGES = 458;
+    public const UNABLE_TO_QUEUE_MESSAGES = 458;
 
     /**
      * 459
      * @var int
      */
-    const NODE_NOT_ALLOWED = 459;
+    public const NODE_NOT_ALLOWED = 459;
 
     /**
      * 500
      * @var int
      */
-    const COMMAND_NOT_RECOGNIZED = 500;
+    public const COMMAND_NOT_RECOGNIZED = 500;
 
     /**
      * 501
      * @var int
      */
-    const SYNTAX_ERROR = 501;
+    public const SYNTAX_ERROR = 501;
 
     /**
      * 502
      * @var int
      */
-    const COMMAND_NOT_IMPLEMENTED = 502;
+    public const COMMAND_NOT_IMPLEMENTED = 502;
 
     /**
      * 503
      * @var int
      */
-    const BAD_SEQUENCE_OF_COMMANDS = 503;
+    public const BAD_SEQUENCE_OF_COMMANDS = 503;
 
     /**
      * 504
      * @var int
      */
-    const COMMAND_PARAMETER_NOT_IMPLEMENTED = 504;
+    public const COMMAND_PARAMETER_NOT_IMPLEMENTED = 504;
 
     /**
      * 521
      * @var int
      */
-    const MACHINE_DOES_NOT_ACCEPT_MAIL = 521;
+    public const MACHINE_DOES_NOT_ACCEPT_MAIL = 521;
 
     /**
      * 530
      * @var int
      */
-    const MUST_ISSUE_STARTTLS_FIRST = 530;
+    public const MUST_ISSUE_STARTTLS_FIRST = 530;
 
     /**
      * 534
      * @var int
      */
-    const AUTHENTICATION_TOO_WEAK = 534;
+    public const AUTHENTICATION_TOO_WEAK = 534;
 
     /**
      * 538
      * @var int
      */
-    const ENCRYPTION_REQUIRED = 538;
+    public const ENCRYPTION_REQUIRED = 538;
 
     /**
      * 550
      * @var int
      */
-    const MAILBOX_UNAVAILABLE = 550;
+    public const MAILBOX_UNAVAILABLE = 550;
 
     /**
      * 551
      * @var int
      */
-    const USER_NOT_LOCAL = 551;
+    public const USER_NOT_LOCAL = 551;
 
     /**
      * 552
      * @var int
      */
-    const REQUESTED_MAIL_ACTION_ABORTED = 552;
+    public const REQUESTED_MAIL_ACTION_ABORTED = 552;
 
     /**
      * 553
      * @var int
      */
-    const MAILBOX_NAME_NOT_ALLOWED = 553;
+    public const MAILBOX_NAME_NOT_ALLOWED = 553;
 
     /**
      * 554
      * @var int
      */
-    const TRANSACTION_FAILED = 554;
+    public const TRANSACTION_FAILED = 554;
 
     /**
      *
      * @var array
      */
-    const CODE_DESCRIPTION = [
+    public const CODE_DESCRIPTION = [
         self::SYSTEM_STATUS_OR_HELP_REPLY => 'System status, or system help reply.',
         self::HELP_MESSAGE => 'Help message.',
         self::DOMAIN_SERVICE_READY => 'Domain service ready. Ready to start TLS.',
