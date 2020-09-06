@@ -2,315 +2,314 @@
 
 namespace hschulz\StatusCodes;
 
-use function \array_key_exists;
+use function array_key_exists;
 
 /**
  *
  */
 class Ftp
 {
-
     // <editor-fold defaultstate="collapsed" desc="Class constants">
 
     /**
      * 100
      * @var int
      */
-    const REQUESTED_ACTION_BEING_INITIATED = 100;
+    public const REQUESTED_ACTION_BEING_INITIATED = 100;
 
     /**
      * 110
      * @var int
      */
-    const RESTART_MARKER_REPLY = 110;
+    public const RESTART_MARKER_REPLY = 110;
 
     /**
      * 120
      * @var int
      */
-    const SERVICE_READY_IN_MINUTES = 120;
+    public const SERVICE_READY_IN_MINUTES = 120;
 
     /**
      * 125
      * @var int
      */
-    const DATA_CONNECTION_ALREADY_OPEN = 125;
+    public const DATA_CONNECTION_ALREADY_OPEN = 125;
 
     /**
      * 150
      * @var int
      */
-    const FILE_STATUS_OK = 150;
+    public const FILE_STATUS_OK = 150;
 
     /**
      * 200
      * @var int
      */
-    const COMMAND_OK = 200;
+    public const COMMAND_OK = 200;
 
     /**
      * 202
      * @var int
      */
-    const COMMAND_NOT_IMPLEMENTED_SUPERFLOUS = 202;
+    public const COMMAND_NOT_IMPLEMENTED_SUPERFLOUS = 202;
 
     /**
      * 211
      * @var int
      */
-    const SYSTEM_STATUS_OR_HELP_REPLY = 211;
+    public const SYSTEM_STATUS_OR_HELP_REPLY = 211;
 
     /**
      * 212
      * @var int
      */
-    const DIR_STATUS = 212;
+    public const DIR_STATUS = 212;
 
     /**
      * 213
      * @var int
      */
-    const FILE_STATUS = 213;
+    public const FILE_STATUS = 213;
 
     /**
      * 214
      * @var int
      */
-    const HELP_MESSAGE = 214;
+    public const HELP_MESSAGE = 214;
 
     /**
      * 215
      * @var int
      */
-    const SYSTEM_TYPE = 215;
+    public const SYSTEM_TYPE = 215;
 
     /**
      * 220
      * @var int
      */
-    const SYSTEM_READY = 220;
+    public const SYSTEM_READY = 220;
 
     /**
      * 221
      * @var int
      */
-    const SERVICE_CLOSING_SYSTEM_CONNECTION = 221;
+    public const SERVICE_CLOSING_SYSTEM_CONNECTION = 221;
 
     /**
      * 225
      * @var int
      */
-    const DATA_CONNECTION_OPEN = 225;
+    public const DATA_CONNECTION_OPEN = 225;
 
     /**
      * 226
      * @var int
      */
-    const CLOSING_DATA_CONNECTION = 226;
+    public const CLOSING_DATA_CONNECTION = 226;
 
     /**
      * 227
      * @var int
      */
-    const ENTERING_PASSIVE_MODE = 227;
+    public const ENTERING_PASSIVE_MODE = 227;
 
     /**
      * 228
      * @var int
      */
-    const ENTERING_LONG_PASSIVE_MODE = 228;
+    public const ENTERING_LONG_PASSIVE_MODE = 228;
 
     /**
      * 229
      * @var int
      */
-    const ENTERING_EXTENDED_PASSIVE_MODE = 229;
+    public const ENTERING_EXTENDED_PASSIVE_MODE = 229;
 
     /**
      * 230
      * @var int
      */
-    const USER_LOGGED_IN = 230;
+    public const USER_LOGGED_IN = 230;
 
     /**
      * 231
      * @var int
      */
-    const USER_LOGGED_OUT = 231;
+    public const USER_LOGGED_OUT = 231;
 
     /**
      * 232
      * @var int
      */
-    const LOGOUT_COMMAND_NOTED = 232;
+    public const LOGOUT_COMMAND_NOTED = 232;
 
     /**
      * 250
      * @var int
      */
-    const REQUESTED_FILE_ACTION_OK = 250;
+    public const REQUESTED_FILE_ACTION_OK = 250;
 
     /**
      * 257
      * @var int
      */
-    const PATHNAME_CREATED = 257;
+    public const PATHNAME_CREATED = 257;
 
     /**
      * 331
      * @var int
      */
-    const USERNAME_OK_NEED_PASSWORD = 331;
+    public const USERNAME_OK_NEED_PASSWORD = 331;
 
     /**
      * 332
      * @var int
      */
-    const NEED_ACCOUNT_FOR_LOGIN = 332;
+    public const NEED_ACCOUNT_FOR_LOGIN = 332;
 
     /**
      * 350
      * @var int
      */
-    const REQUESTED_FILE_ACTION_PENDING = 350;
+    public const REQUESTED_FILE_ACTION_PENDING = 350;
 
     /**
      * 421
      * @var int
      */
-    const SERVICE_NOT_AVAILABLE = 421;
+    public const SERVICE_NOT_AVAILABLE = 421;
 
     /**
      * 425
      * @var int
      */
-    const CANT_OPEN_DATA_CONNECTION = 425;
+    public const CANT_OPEN_DATA_CONNECTION = 425;
 
     /**
      * 426
      * @var int
      */
-    const CONNECTION_CLOSED = 426;
+    public const CONNECTION_CLOSED = 426;
 
     /**
      * 430
      * @var int
      */
-    const INVALID_USERNAME_OR_PASSWORD = 430;
+    public const INVALID_USERNAME_OR_PASSWORD = 430;
 
     /**
      * 434
      * @var int
      */
-    const REQUESTED_HOST_UNAVAILABLE = 434;
+    public const REQUESTED_HOST_UNAVAILABLE = 434;
 
     /**
      * 450
      * @var int
      */
-    const REQUESTED_FILE_ACTION_NOT_TAKEN = 450;
+    public const REQUESTED_FILE_ACTION_NOT_TAKEN = 450;
 
     /**
      * 451
      * @var int
      */
-    const REQUESTED_ACTION_ABORTED_LOCAL_ERROR = 451;
+    public const REQUESTED_ACTION_ABORTED_LOCAL_ERROR = 451;
 
     /**
      * 452
      * @var int
      */
-    const REQUESTED_ACTION_NOT_TAKEN_NOT_ENOUGH_SPACE = 452;
+    public const REQUESTED_ACTION_NOT_TAKEN_NOT_ENOUGH_SPACE = 452;
 
     /**
      * 500
      * @var int
      */
-    const SYNTAX_ERROR = 500;
+    public const SYNTAX_ERROR = 500;
 
     /**
      * 501
      * @var int
      */
-    const SYNTAX_ERROR_IN_PARAMETERS = 501;
+    public const SYNTAX_ERROR_IN_PARAMETERS = 501;
 
     /**
      * 502
      * @var int
      */
-    const COMMAND_NOT_IMPLEMENTED = 502;
+    public const COMMAND_NOT_IMPLEMENTED = 502;
 
     /**
      * 503
      * @var int
      */
-    const BAD_SEQUENCE_OF_COMMANDS = 503;
+    public const BAD_SEQUENCE_OF_COMMANDS = 503;
 
     /**
      * 504
      * @var int
      */
-    const COMMAND_NOT_IMPLEMENTED_FOR_PARAMETER = 504;
+    public const COMMAND_NOT_IMPLEMENTED_FOR_PARAMETER = 504;
 
     /**
      * 530
      * @var int
      */
-    const NOT_LOGGED_IN = 530;
+    public const NOT_LOGGED_IN = 530;
 
     /**
      * 532
      * @var int
      */
-    const NEED_ACCOUNT_FOR_STORING_FILES = 532;
+    public const NEED_ACCOUNT_FOR_STORING_FILES = 532;
 
     /**
      * 550
      * @var int
      */
-    const REQUESTED_ACTION_NOT_TAKEN_FILE_UNAVAILABLE = 550;
+    public const REQUESTED_ACTION_NOT_TAKEN_FILE_UNAVAILABLE = 550;
 
     /**
      * 551
      * @var int
      */
-    const REQUESTED_ACTION_ABORTED_PAGE_TYPE_UNKNOWN = 551;
+    public const REQUESTED_ACTION_ABORTED_PAGE_TYPE_UNKNOWN = 551;
 
     /**
      * 552
      * @var int
      */
-    const REQUESTED_FILE_ACTION_ABORTED = 552;
+    public const REQUESTED_FILE_ACTION_ABORTED = 552;
 
     /**
      * 553
      * @var int
      */
-    const REQUESTED_ACTION_NOT_TAKEN_FILENAME_NOT_ALLOWED = 553;
+    public const REQUESTED_ACTION_NOT_TAKEN_FILENAME_NOT_ALLOWED = 553;
 
     /**
      * 631
      * @var int
      */
-    const INTEGRITY_PROTECTED_REPLY = 631;
+    public const INTEGRITY_PROTECTED_REPLY = 631;
 
     /**
      * 632
      * @var int
      */
-    const CONFIDENTIALITY_AND_INTEGRITY_PROTECTED_REPLY = 632;
+    public const CONFIDENTIALITY_AND_INTEGRITY_PROTECTED_REPLY = 632;
 
     /**
      * 633
      * @var int
      */
-    const CONFIDENTIALITY_PROTECTED_REPLY = 633;
+    public const CONFIDENTIALITY_PROTECTED_REPLY = 633;
 
     /**
      *
      * @var array
      */
-    const CODE_DESCRIPTION = [
+    public const CODE_DESCRIPTION = [
         self::REQUESTED_ACTION_BEING_INITIATED => 'Series: The requested action is being initiated, expect another reply before proceeding with a new command.',
         self::RESTART_MARKER_REPLY => 'Restart marker replay . In this case, the text is exact and not left to the particular implementation; it must read: MARK yyyy = mmmm where yyyy is User-process data stream marker, and mmmm server\'s equivalent marker (note the spaces between markers and "=").',
         self::SERVICE_READY_IN_MINUTES => 'Service ready in nnn minutes.',

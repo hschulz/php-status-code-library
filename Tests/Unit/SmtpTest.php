@@ -2,13 +2,13 @@
 
 namespace hschulz\StatusCodes\Tests\Unit;
 
-use \hschulz\StatusCodes\Smtp;
-use \PHPUnit\Framework\TestCase;
-use \stdClass;
-use \TypeError;
-use const \PHP_INT_MAX;
-use const \PHP_INT_MIN;
-use function \chr;
+use function chr;
+use hschulz\StatusCodes\Smtp;
+use const PHP_INT_MAX;
+use const PHP_INT_MIN;
+use PHPUnit\Framework\TestCase;
+use stdClass;
+use TypeError;
 
 final class SmtpTest extends TestCase
 {
